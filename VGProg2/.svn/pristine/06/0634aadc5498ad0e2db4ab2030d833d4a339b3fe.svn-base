@@ -1,0 +1,105 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BaldspotCharacterMovementComponent : BaldspotMovementComponent
+{
+
+    //public float footstepSpeed = 0.3f;
+    public Transform head;
+    public float maxMovementSpeed = 10.0f;
+    private BaldspotInputManager input;
+
+	void Start () {
+        base.Start();
+        input = GetComponent<BaldspotInputManager>();
+	}
+
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    public void LateUpdate()
+    {
+        if (!head.GetComponent<SpriteRenderer>().flipX)
+        {
+            head.localPosition += headOffsetRight;
+        }
+    }
+
+    public void PlayFootstepSound()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+
+    protected override void OnDirectionChange(EPlayerMovementDirection direction)
+    {
+        base.OnDirectionChange(direction);
+        if(direction == EPlayerMovementDirection.right)
+        {
+            FlipAllSprites(true);
+        }
+
+        if (direction == EPlayerMovementDirection.left)
+        {
+            FlipAllSprites(false);
+        }
+    }
+
+    protected override void FixedUpdate()
+    {
+        if (!canMove)
+            return;
+
+        Vector3 tempMovement = Vector3.zero;
+
+        if (input.btn_horizontal < 0)
+        {
+            //rigidbody.AddForce(-transform.right * movementSpeed * Time.deltaTime);
+            //rigidbody.AddForce(Vector3.ClampMagnitude(-transform.right * movementSpeed, maxMovementSpeed) * Time.deltaTime);
+            tempMovement += -transform.right * movementSpeed;
+
+            currentDirecion = -transform.right;
+            if (IsDirectionChange(EPlayerMovementDirection.left)) { OnDirectionChange(EPlayerMovementDirection.left); }
+            movementDirection = EPlayerMovementDirection.left;
+        }
+        if (input.btn_horizontal > 0)
+        {
+            //rigidbody.AddForce(Vector3.ClampMagnitude(transform.right * movementSpeed, maxMovementSpeed) * Time.deltaTime);
+            tempMovement += transform.right * movementSpeed;
+
+            currentDirecion = transform.right;
+            if (IsDirectionChange(EPlayerMovementDirection.right)) { OnDirectionChange(EPlayerMovementDirection.right); }
+            movementDirection = EPlayerMovementDirection.right;
+        }
+        if (input.btn_vertical > 0)
+        {
+            //rigidbody.AddForce(transform.up * movementSpeed * Time.deltaTime);
+            //rigidbody.AddForce(Vector3.ClampMagnitude(transform.up * movementSpeed, maxMovementSpeed) * Time.deltaTime);
+            tempMovement += transform.up * movementSpeed;
+
+
+            currentDirecion = transform.up;
+            if (IsDirectionChange(EPlayerMovementDirection.up)) { OnDirectionChange(EPlayerMovementDirection.up); }
+            movementDirection = EPlayerMovementDirection.up;
+        }
+        if (input.btn_vertical < 0)
+        {
+            // rigidbody.AddForce(-transform.up * movementSpeed * Time.deltaTime);
+            //rigidbody.AddForce(Vector3.ClampMagnitude(-transform.up * movementSpeed, maxMovementSpeed) * Time.deltaTime);
+            tempMovement += -transform.up * movementSpeed;
+
+            currentDirecion = -transform.up;
+            if (IsDirectionChange(EPlayerMovementDirection.down)) { OnDirectionChange(EPlayerMovementDirection.down); }
+            movementDirection = EPlayerMovementDirection.down;
+        }
+
+        rigidbody.AddForce(Vector3.ClampMagnitude(tempMovement, maxMovementSpeed));
+
+        //rigidbody.velocity = new Vector3(Mathf.Clamp(rigidbody.velocity.x, -3.5f, 3.5f), Mathf.Clamp(rigidbody.velocity.y, -3.5f, 3.5f), 0); 
+
+        //Debug.Log(rigidbody.velocity.x);
+        base.FixedUpdate();
+    }
+}
