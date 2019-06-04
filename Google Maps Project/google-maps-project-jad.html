@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- google-maps-project-jad.html
+	My bucket list locations.
+	Jimmy Dimer
+	Web & Distributed Programming
+	Fall 2017
+-->
+<html lang = "en">
+    <head>
+		<meta charset="UTF-8">
+		<title>Google Maps</title>
+		<link rel="stylesheet" type="text/css" href="google-maps-project-jad.css">
+		<script src="google-maps-project-jad.js"></script>
+	</head>
+	<body>
+		<h1>Jimmy's Amazing Around-the-World Adventure Game!</h1>
+		<h4>Instructions: <input id="instruct-id" type="text" value="" size="70" disabled></h4>
+		<h4>Hint: <input id="hint-id" type="text" value="" size="45" disabled></h4>
+		<h4>Score: <input id="score-id" type="text" value="" size="1" disabled></h4>
+		<script> instruct(), hint(1), scoreUpdate(score)</script>
+        <div style="border-radius: 50px;" id="myMapID"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ-FMbzcQQYUquOCtNdxa9xiaeH2j4jhU&callback=initMap"
+            async defer>
+        </script>
+    </body>
+</html>

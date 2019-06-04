@@ -1,0 +1,22 @@
+#myMapID {
+	height: 70%;
+	width: 100%;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-image: url("https://relaleadership.com/wp-content/uploads/2017/04/maxresdefault.jpg"); 
+}
+
+h1 {
+	font-family: "Courier New", Courier, monospace;
+	text-align: center;
+}
+
+h4 {
+	font-family: "Courier New", Courier, monospace;
+	text-indent: 20px;
+	letter-spacing: 1px;
+}
