@@ -1,0 +1,72 @@
+.page {
+	margin-top: 1em;
+	margin-bottom: .1em;
+}
+
+.maintenanceRow {
+    height: 56px;
+}
+
+.pageContainer {
+	margin-top: 2em;
+}
+
+.page {
+	margin-top: 2em;
+	margin-bottom: .3em;
+    margin-left: 0.75em;
+    margin-right: 0.75rem;
+}
+
+.container {
+	top: 1em;
+	max-height: calc(100vh - 10em);
+	overflow: auto;
+}
+
+.table {
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+}
+
+.btnView {
+    padding: 15px 30px 15px 30px;
+    background-color: #0C1D36;
+    border-radius: 15px;
+    border-style: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+td {
+    border: none;
+    padding: 30px; 
+    text-align: center;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+th {
+    background: #0C1D36;
+    border: none;
+    border-spacing: none;
+    color: white;
+    overflow: hidden;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+thead {
+    background: #4c4c9e;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f2ff;
+}

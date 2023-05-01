@@ -1,0 +1,15 @@
+.content {
+	flex-grow: 1;
+	height: 100%;
+}
+
+.pageWrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh);
+}
+  
+body {
+    background-color: #E2E1F7;
+    width: 100%;
+}

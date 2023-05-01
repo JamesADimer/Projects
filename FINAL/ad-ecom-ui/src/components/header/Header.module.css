@@ -1,0 +1,49 @@
+body {
+    position: absolute;
+    top: 75px;
+  }
+  
+  .header {
+      -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+      -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+      box-sizing: border-box;
+      background: #0C1D36;
+      box-shadow: 0px 2px 5px #777;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 22px 5px 5px;
+      z-index: 12;
+      position: sticky; top: 0; width: 100%;
+      position: fixed;
+    }
+    
+  .logoContainer {
+    position: absolute;
+    top: 7px;
+  }
+  .btnView {
+    width: 120px;
+    height: 25px;
+    background-color: white;
+    border-radius: 15px;
+    border-style: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #434497;
+    position: absolute;
+    top: 30px;
+    left:190px;
+    cursor: pointer;
+  }
+  .btnLogin {
+    position: absolute;
+    right: 65px;
+  }
+  
+  .btnCart {
+    padding: 5px 1px 2px 5px;
+  }
+  

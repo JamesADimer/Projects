@@ -1,0 +1,32 @@
+p {
+  font-weight: 700;
+  font-size: large;
+  color: #666666;
+  text-align: center;
+}
+
+.createPatient {
+    display: grid;
+}
+.left {
+  grid-area: left;
+}
+.center {
+  grid-area: center;
+  width: 30em;
+  padding: 0 50px 0 50px;
+}
+.right {
+  grid-area: right;
+}
+.label {
+  font-weight: 700;
+  color: #666666;
+}
+.span{
+  font-size: 14px;
+  padding: 3px;
+  color: red;
+}
+  
+  
