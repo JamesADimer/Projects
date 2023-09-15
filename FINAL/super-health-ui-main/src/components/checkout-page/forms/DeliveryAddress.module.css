@@ -1,0 +1,47 @@
+.deliveryAddress {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em
+}
+
+.label {
+  font-weight: 700;
+  color: #666666;
+}
+
+.span {
+  font-size: 14px;
+  padding: 3px;
+  color: red;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 3px;
+  margin-bottom: -10px;
+
+}
+
+.dash {
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.inputWrap {
+  display: inline-flex;
+  flex-flow: row;
+  flex: 3;
+  flex-direction: row;
+  margin-top: 8.25px;
+  padding: 13px;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.phoneError {
+  font-size: 14px;
+  padding: 3px;
+  color: red;
+}
